@@ -1,0 +1,139 @@
+<!doctype html>
+
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Birthday — From Your Love Rony</title>
+  <style>
+    :root{--bg1:#ff9a9e;--bg2:#fad0c4;--accent:#ff6b6b}
+    html,body{height:100%;margin:0;font-family: 'Segoe UI', Roboto, "Noto Sans Bengali", sans-serif;background:linear-gradient(135deg,var(--bg1),var(--bg2));}
+    .wrap{min-height:100%;display:flex;align-items:center;justify-content:center;padding:30px}
+    .card{width:920px;max-width:95%;background:rgba(255,255,255,0.06);backdrop-filter: blur(6px);border-radius:20px;padding:28px;box-shadow:0 10px 30px rgba(0,0,0,0.12);position:relative;overflow:hidden}/* Animated heading */
+.heading{font-size:40px;line-height:1.05;color:#fff;text-align:center;font-weight:700;letter-spacing:1px;margin:6px 0}
+.sub{color:rgba(255,255,255,0.9);text-align:center;margin-bottom:18px;font-size:18px}
+
+/* Heart pulse */
+.heart{display:inline-block;margin-left:8px;transform-origin:center center;animation:beat 1s infinite}
+@keyframes beat{0%{transform:scale(1)}50%{transform:scale(1.15)}100%{transform:scale(1)}}
+
+/* Image */
+.photo{display:block;margin:16px auto;border-radius:14px;max-width:360px;width:100%;height:220px;object-fit:cover;box-shadow:0 8px 24px rgba(0,0,0,0.35);border:4px solid rgba(255,255,255,0.12)}
+
+/* Animated message box */
+.message{background:linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03));padding:18px;border-radius:12px;color:rgba(255,255,255,0.95);font-size:17px;text-align:center;margin-top:12px}
+
+/* Signature */
+.sig{margin-top:14px;text-align:center;font-weight:700;color:rgba(255,255,255,0.95);font-size:18px}
+
+/* Confetti canvas covers entire card */
+canvas.confetti{position:absolute;inset:0;pointer-events:none}
+
+/* Floating balloons */
+.balloons{position:absolute;left:-30px;top:20px;display:flex;flex-direction:column;gap:10px}
+.balloon{width:60px;height:80px;border-radius:50%;background:linear-gradient(180deg,#ffd1dc,#ff7aa2);position:relative;animation:float 6s ease-in-out infinite}
+.balloon:after{content:'';position:absolute;left:50%;bottom:-18px;width:2px;height:22px;background:rgba(255,255,255,0.6);transform:translateX(-50%)}
+.balloon:nth-child(2){left:60px;transform:scale(0.9);animation-duration:5.5s;background:linear-gradient(180deg,#c1f7d5,#5ee7a6)}
+.balloon:nth-child(3){left:120px;transform:scale(1.05);animation-duration:6.5s;background:linear-gradient(180deg,#ffd9a6,#ffb86b)}
+@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-18px)}100%{transform:translateY(0)}}
+
+/* Typing effect */
+.typed{display:inline-block;white-space:nowrap;overflow:hidden;border-right:2px solid rgba(255,255,255,0.8);animation:typing 4s steps(40,end) 1s 1 normal both, blink .8s step-end infinite}
+@keyframes typing{from {width:0} to {width:100%}}
+@keyframes blink{50%{border-color:transparent}}
+
+/* Button */
+.btn{display:inline-block;margin:12px auto 0;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.12);color:#fff;text-decoration:none;font-weight:700;cursor:pointer;transition:transform .18s}
+.btn:hover{transform:translateY(-4px)}
+
+/* Responsive */
+@media (max-width:520px){.heading{font-size:26px}.photo{height:160px}}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" id="card"><div class="balloons" aria-hidden="true">
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+  </div>
+
+  <canvas class="confetti" id="confetti"></canvas>
+
+  <h1 class="heading">শুভ জন্মদিন, প্রিয় পাখি 🕊 <span class="heart">💖</span></h1>
+  <div class="sub">আজকের দিনটা তোমার হাসি , আমার ভালোবাসা আর সুখ দিয়ে মুখরিত থাকুক।</div>
+
+  <!-- Change the src below to your own image file name or URL -->
+  <img class="photo" id="photo" src="https://github.com/YamimHossain/myphoto.jpg/blob/main/Mustard%20Romantic%20Love%20Birthday%20WIsh%20Instagram%20Post.jpg?raw=true" alt="Birthday picture" />
+
+  <div class="message">
+    <div id="typedHolder"><span class="typed" id="typedText">তুমি আমার জীবনের আলো — আজকের দিনটা যেন সবসময় বিশেষ থাকে।</span></div>
+    <div class="sig">From Your Love <span style="color:var(--accent);">Rony</span></div>
+
+<button id="playSong">Please Click Here For A Sweet Music For My Taiaba 🎵</button>
+
+<audio id="myAudio">
+  <source src="https://www.dropbox.com/scl/fi/hkn5kyuxdxqxo5ridhgln/Ishq-Wala-Love-SOTY-Alia-Bhatt-Sidharth-Malhotra-Varun-Dhawan-Neeti-Mohan-4K-AudioTrimmer.com.mp3?rlkey=08cxvli6n1biiulk5vy8c48wt&st=2y5vldq5&raw=1" type="audio/mpeg">
+  আপনার ব্রাউজার অডিও সমর্থন করে না।
+</audio>
+
+<script>
+  const btn = document.getElementById('playSong');
+  const audio = document.getElementById('myAudio');
+
+  btn.addEventListener('click', () => {
+    audio.play();
+  });
+</script>
+
+    <div style="text-align:center;margin-top:10px;">
+      <a class="btn" id="playBtn">বউজান কষ্ট না হলে আরেকবার চাপুন 😁</a>
+    </div>
+  </div>
+
+</div>
+
+  </div>  <script>
+    // Simple confetti using canvas
+    const canvas = document.getElementById('confetti');
+    const ctx = canvas.getContext('2d');
+    let W, H, particles = [];
+
+    function resize(){ W = canvas.width = card.clientWidth; H = canvas.height = card.clientHeight; }
+    const card = document.getElementById('card');
+    resize(); window.addEventListener('resize', resize);
+
+    function rand(min,max){ return Math.random()*(max-min)+min }
+    function initParticles(count=80){ particles = []; for(let i=0;i<count;i++){ particles.push({x:rand(0,W), y:rand(-H,0), r:rand(4,9), d:rand(1,3), color:['#ffd1dc','#ffd9a6','#c1f7d5','#bfe9ff'][Math.floor(rand(0,4))], tilt:rand(-10,10) }) } }
+    initParticles(90);
+
+    function draw(){ ctx.clearRect(0,0,W,H); for(let p of particles){ ctx.beginPath(); ctx.fillStyle = p.color; ctx.ellipse(p.x, p.y, p.r, p.r*0.6, p.tilt,0,Math.PI*2); ctx.fill(); p.y += p.d + Math.sin(p.x/20); p.x += Math.sin(p.y/30); p.tilt += 0.02; if(p.y>H+20){ p.y = rand(-40, -10); p.x = rand(0,W); } } requestAnimationFrame(draw); }
+    draw();
+
+    // Typed text replay
+    const typedEl = document.getElementById('typedText');
+    const originalText = typedEl.textContent;
+    function replayTyping(){ typedEl.style.width = '0'; void typedEl.offsetWidth; // restart animation
+      typedEl.style.animation = 'none';
+      setTimeout(()=>{ typedEl.style.animation = "typing 4s steps(40,end) 0s 1 normal both, blink .8s step-end infinite" },50);
+    }
+    document.getElementById('playBtn').addEventListener('click', ()=>{ replayTyping(); // restart confetti too
+      initParticles(120);
+    });
+
+    // Optional: Click on image to change (for demo)
+    const photo = document.getElementById('photo');
+    photo.addEventListener('click', ()=>{
+      const url = prompt('আপনার ছবি URL দিন (বা লোকাল path):', photo.src);
+      if(url) photo.src = url;
+    });
+
+    // Accessibility: reduce motion respect
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if(mq.matches){ // stop animations
+      canvas.style.display='none'; document.querySelectorAll('.balloon').forEach(b=>b.style.animation='none'); typedEl.style.borderRight='none'; }
+
+    // Helpful note: you can edit name and message inside the HTML.
+     </script></body>
+
